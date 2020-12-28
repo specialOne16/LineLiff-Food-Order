@@ -64,7 +64,7 @@ function load() {
   const btnLogin = document.getElementById("login");
   const btnLogout = document.getElementById("logout");
   cekLine();
-  if (cekLogin()) {
+  if (liff.isLoggedIn()) {
     btnLogin.style.display = "none";
     liff
       .getProfile()
