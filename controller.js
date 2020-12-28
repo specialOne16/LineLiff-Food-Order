@@ -1,5 +1,3 @@
-let bukaDariLine = false;
-let isLoggedIn = false;
 const liffId = "1655531871-YgWB4z5l";
 
 function inc(x) {
@@ -47,14 +45,11 @@ function openExternal() {
 }
 
 function cekLogin() {
-  if (!isLoggedIn) {
-    return false;
-  }
-  return true;
+  return liff.isLoggedIn();
 }
 
 function cekLine() {
-  if (bukaDariLine) {
+  if (liff.isInClient()) {
     return true;
   }
   document.getElementById("external").style.display = "none";
