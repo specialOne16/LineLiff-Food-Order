@@ -13,28 +13,28 @@ function dec(x) {
 
 function order() {
   if (!cekLogin()) return;
+  if (!cekLine()) {
+    alert("Buka dari line ya");
+    return;
+  }
   document.getElementById("makanan1").innerHTML = 0;
   document.getElementById("makanan2").innerHTML = 0;
   document.getElementById("makanan3").innerHTML = 0;
   document.getElementById("minuman1").innerHTML = 0;
   document.getElementById("minuman2").innerHTML = 0;
-  if (!cekLine()) {
-    alert("Buka dari line ya");
-  } else {
-    liff
-      .sendMessages([
-        {
-          type: "text",
-          text: "Anda telah menggunakan fitur Send Message!", // ganti sesuai konteks
-        },
-      ])
-      .then(function () {
-        window.alert("Pesanan terkirim");
-      })
-      .catch(function (error) {
-        window.alert("Pesanan gagal terkirim");
-      });
-  }
+  liff
+    .sendMessages([
+      {
+        type: "text",
+        text: "Anda telah menggunakan fitur Send Message!", // ganti sesuai konteks
+      },
+    ])
+    .then(function () {
+      window.alert("Pesanan terkirim");
+    })
+    .catch(function (error) {
+      window.alert("Pesanan gagal terkirim");
+    });
 }
 
 function openExternal() {
@@ -66,6 +66,8 @@ function load() {
   initLiff();
   if (cekLogin()) {
     btnLogin.style.display = "none";
+    namapengunjung.innerHTML = JSON.parse(liff.getProfile()).displayName;
+    photopengunjung.src = JSON.parse(liff.getProfile()).pictureUrl;
   } else {
     salamPembuka.style.display = "none";
     btnLogout.style.display = "none";
@@ -88,8 +90,6 @@ function login() {
   if (!liff.isLoggedIn()) {
     liff.login();
     btnLogin.style.display = "none";
-    namapengunjung.innerHTML = JSON.parse(liff.getProfile()).displayName;
-    photopengunjung.src = JSON.parse(liff.getProfile()).pictureUrl;
     salamPembuka.style.display = "none";
     btnLogout.style.display = "none";
   }
