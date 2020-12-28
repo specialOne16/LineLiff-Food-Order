@@ -77,6 +77,7 @@ function load() {
         console.log(err);
       });
   } else {
+    photopengunjung.style.display = "none";
     salamPembuka.style.display = "none";
     btnLogout.style.display = "none";
   }
