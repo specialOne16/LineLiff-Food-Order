@@ -59,11 +59,11 @@ function cekLine() {
 const namapengunjung = document.getElementById("namapengunjung");
 const photopengunjung = document.getElementById("photopengunjung");
 function load() {
+  initLiff();
   const salamPembuka = document.getElementById("header");
   const btnLogin = document.getElementById("login");
   const btnLogout = document.getElementById("logout");
   cekLine();
-  initLiff();
   if (cekLogin()) {
     btnLogin.style.display = "none";
     liff
@@ -98,8 +98,6 @@ function initLiff() {
 function login() {
   if (!liff.isLoggedIn()) {
     liff.login();
-    btnLogin.style.display = "none";
-    window.location.reload();
   }
 }
 
