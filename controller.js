@@ -56,16 +56,16 @@ function cekLine() {
   return false;
 }
 
+const namapengunjung = document.getElementById("namapengunjung");
+const photopengunjung = document.getElementById("photopengunjung");
 function load() {
   const salamPembuka = document.getElementById("header");
-  const namapengunjung = document.getElementById("namapengunjung");
   const btnLogin = document.getElementById("login");
   const btnLogout = document.getElementById("logout");
   cekLine();
   initLiff();
   if (cekLogin()) {
     btnLogin.style.display = "none";
-    namapengunjung.innerHTML = "Easta";
   } else {
     salamPembuka.style.display = "none";
     btnLogout.style.display = "none";
@@ -87,6 +87,11 @@ function initLiff() {
 function login() {
   if (!liff.isLoggedIn()) {
     liff.login();
+    btnLogin.style.display = "none";
+    namapengunjung.innerHTML = JSON.parse(liff.getProfile()).displayName;
+    photopengunjung.src = JSON.parse(liff.getProfile()).pictureUrl;
+    salamPembuka.style.display = "none";
+    btnLogout.style.display = "none";
   }
 }
 
