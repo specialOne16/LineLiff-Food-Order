@@ -70,7 +70,8 @@ function load() {
       .getProfile()
       .then((obj) => {
         namapengunjung.innerHTML = obj.displayName;
-        photopengunjung.src = obj.pictureUrl;
+        if (obj.pictureUrl) photopengunjung.src = obj.pictureUrl;
+        else photopengunjung.style.display = "none";
       })
       .catch((err) => {
         console.log(err);
