@@ -69,8 +69,8 @@ function load() {
     liff
       .getProfile()
       .then((obj) => {
-        namapengunjung.innerHTML = JSON.parse(obj).displayName;
-        photopengunjung.src = JSON.parse(obj).pictureUrl;
+        namapengunjung.innerHTML = obj.displayName;
+        photopengunjung.src = obj.pictureUrl;
       })
       .catch((err) => {
         console.log(err);
