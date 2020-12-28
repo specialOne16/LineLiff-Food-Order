@@ -99,8 +99,7 @@ function login() {
   if (!liff.isLoggedIn()) {
     liff.login();
     btnLogin.style.display = "none";
-    salamPembuka.style.display = "none";
-    btnLogout.style.display = "none";
+    window.location.reload();
   }
 }
 
