@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Bootstrap 4 Example</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+  <style>
+    .btn:focus {
+      outline: none;
+      box-shadow: none;
+    }
+  </style>
+
+</head>
+
+<body onload="load()">
+  <div class="container-fluid p-3 bg-warning">
+    <img src="icon.png" alt="logo" class="float-left" style="height: 80px;" />
+    <h1 class="text-right">JUSEAT</h1>
+    <p class="text-right font-weight-bold">Just sit and eat</p>
+  </div>
+
+  <div class="container py-3">
+    <h4 id="header">Halo <span class="font-weight-bold" id="namapengunjung">pengunjung</span>, yuk pesan dari JUSEAT!
+    </h4>
+    <button id="logout" class="btn btn-danger float-right">Logout</button>
+    <h4 id="login">Hi! <button class="btn btn-primary">Login</button> dulu yuk</h4>
+  </div>
+
+  <div class="container py-3">
+    <h2>Makanan</h2>
+    <ul style="list-style: none;">
+      <li>
+        <div class="row">
+          <div class="col-8">
+            <p>Nasi Kuning</p>
+          </div>
+          <div class="col-1">
+            <button type="button" class="btn btn-danger" onclick="dec(makanan1)">-</button>
+          </div>
+          <div class="col-2">
+            <p class="text-center font-weight-bold" id="makanan1">0</p>
+          </div>
+          <div class="col-1">
+            <button type="button" class="btn btn-success" onclick="inc(makanan1)">+</button>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="row">
+          <div class="col-8">
+            <p>Roti Bakar</p>
+          </div>
+          <div class="col-1">
+            <button type="button" class="btn btn-danger" onclick="dec(makanan2)">-</button>
+          </div>
+          <div class="col-2">
+            <p class="text-center font-weight-bold" id="makanan2">0</p>
+          </div>
+          <div class="col-1">
+            <button type="button" class="btn btn-success" onclick="inc(makanan2)">+</button>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="row">
+          <div class="col-8">
+            <p>Nasi Padang</p>
+          </div>
+          <div class="col-1">
+            <button type="button" class="btn btn-danger" onclick="dec(makanan3)">-</button>
+          </div>
+          <div class="col-2">
+            <p class="text-center font-weight-bold" id="makanan3">0</p>
+          </div>
+          <div class="col-1">
+            <button type="button" class="btn btn-success" onclick="inc(makanan3)">+</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <h2>Minuman</h2>
+    <ul style="list-style: none;">
+      <li>
+        <div class="row">
+          <div class="col-8">
+            <p>Teh Tawar</p>
+          </div>
+          <div class="col-1">
+            <button type="button" class="btn btn-danger" onclick="dec(minuman1)">-</button>
+          </div>
+          <div class="col-2">
+            <p class="text-center font-weight-bold" id="minuman1">0</p>
+          </div>
+          <div class="col-1">
+            <button type="button" class="btn btn-success" onclick="inc(minuman1)">+</button>
+          </div>
+        </div>
+      </li>
+      <li>
+        <div class="row">
+          <div class="col-8">
+            <p>Jus Jeruk</p>
+          </div>
+          <div class="col-1">
+            <button type="button" class="btn btn-danger" onclick="dec(minuman2)">-</button>
+          </div>
+          <div class="col-2">
+            <p class="text-center font-weight-bold" id="minuman2">0</p>
+          </div>
+          <div class="col-1">
+            <button type="button" class="btn btn-success" onclick="inc(minuman2)">+</button>
+          </div>
+        </div>
+      </li>
+    </ul>
+
+    <button type="button" onclick="order()" class="btn btn-primary float-right my-3">Pesan</button>
+
+  </div>
+
+  <div class="alert alert-success alert-dismissable fade show" style="display: none;">
+    <strong>Pemesanan Berhasil!</strong> Silahkan tunggu pesanan diantar.
+    <button type="button" class="close" data-dismiss="alert">&times;</button>
+  </div>
+  <script src="controller.js"></script>
+
+</body>
+
+</html>
