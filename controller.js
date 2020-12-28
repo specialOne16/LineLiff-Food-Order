@@ -1,5 +1,6 @@
 let bukaDariLine = false;
 let isLoggedIn = false;
+const liffId = "1655531871-YgWB4z5l";
 
 function inc(x) {
   if (!cekLogin()) return;
@@ -76,7 +77,6 @@ function load() {
 }
 
 function initLiff() {
-  const liffId = "1655531871-YgWB4z5l";
   liff
     .init({
       liffId: liffId,
