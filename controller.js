@@ -40,7 +40,7 @@ function order() {
 
 function openExternal() {
   liff.openWindow({
-    url: "https://example.herokuapp.com/", // Isi dengan Endpoint URL aplikasi web Anda
+    url: "https://liff-juseat.herokuapp.com/",
     external: true,
   });
 }
@@ -89,10 +89,14 @@ function initLiff() {
 }
 
 function login() {
-  liff.login();
+  if (!liff.isLoggedIn()) {
+    liff.login();
+  }
 }
 
 function logout() {
-  liff.logout();
-  window.location.reload();
+  if (liff.isLoggedIn()) {
+    liff.logout();
+    window.location.reload();
+  }
 }
