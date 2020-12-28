@@ -45,6 +45,7 @@ function order() {
       : "";
   if (!pesanan) {
     alert("minimal pesan 1 ya");
+    return;
   }
   makanan1.innerHTML = 0;
   makanan2.innerHTML = 0;
