@@ -76,7 +76,7 @@ function load() {
 }
 
 function initLiff() {
-  const liffId = "";
+  const liffId = "1655531871-YgWB4z5l";
   liff
     .init({
       liffId: liffId,
