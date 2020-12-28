@@ -60,27 +60,6 @@ const namapengunjung = document.getElementById("namapengunjung");
 const photopengunjung = document.getElementById("photopengunjung");
 function load() {
   initLiff();
-  const salamPembuka = document.getElementById("header");
-  const btnLogin = document.getElementById("login");
-  const btnLogout = document.getElementById("logout");
-  cekLine();
-  if (liff.isLoggedIn()) {
-    btnLogin.style.display = "none";
-    liff
-      .getProfile()
-      .then((obj) => {
-        namapengunjung.innerHTML = obj.displayName;
-        if (obj.pictureUrl) photopengunjung.src = obj.pictureUrl;
-        else photopengunjung.style.display = "none";
-      })
-      .catch((err) => {
-        console.log(err);
-      });
-  } else {
-    photopengunjung.style.display = "none";
-    salamPembuka.style.display = "none";
-    btnLogout.style.display = "none";
-  }
 }
 
 function initLiff() {
@@ -91,6 +70,27 @@ function initLiff() {
     .then(() => {
       isLoggedIn = liff.isLoggedIn();
       bukaDariLine = liff.isInClient();
+      const salamPembuka = document.getElementById("header");
+      const btnLogin = document.getElementById("login");
+      const btnLogout = document.getElementById("logout");
+      cekLine();
+      if (liff.isLoggedIn()) {
+        btnLogin.style.display = "none";
+        liff
+          .getProfile()
+          .then((obj) => {
+            namapengunjung.innerHTML = obj.displayName;
+            if (obj.pictureUrl) photopengunjung.src = obj.pictureUrl;
+            else photopengunjung.style.display = "none";
+          })
+          .catch((err) => {
+            console.log(err);
+          });
+      } else {
+        photopengunjung.style.display = "none";
+        salamPembuka.style.display = "none";
+        btnLogout.style.display = "none";
+      }
     })
     .catch((err) => {});
 }
