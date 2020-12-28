@@ -67,6 +67,7 @@ function load() {
   const btnLogin = document.getElementById("login");
   const btnLogout = document.getElementById("logout");
   cekLine();
+  initLiff();
   if (cekLogin()) {
     btnLogin.style.display = "none";
     namapengunjung.innerHTML = "Easta";
