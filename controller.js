@@ -80,10 +80,10 @@ function cekLogin() {
 
 function cekLine() {
   if (liff.isInClient()) {
+    document.getElementById("logout").style.display = "none";
     return true;
   }
   document.getElementById("external").style.display = "none";
-  document.getElementById("logout").style.display = "none";
   return false;
 }
 
