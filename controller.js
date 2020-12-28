@@ -110,7 +110,6 @@ function initLiff() {
         liff
           .getProfile()
           .then((obj) => {
-            document.getElementsByTagName("body").style.display = "block";
             namapengunjung.innerHTML = obj.displayName;
             if (obj.pictureUrl) photopengunjung.src = obj.pictureUrl;
             else photopengunjung.style.display = "none";
