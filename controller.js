@@ -63,7 +63,8 @@ function load() {
   const salamPembuka = document.getElementById("header");
   const btnLogin = document.getElementById("login");
   const btnLogout = document.getElementById("logout");
-  if (cekLogin() || cekLine()) {
+  cekLine();
+  if (cekLogin()) {
     btnLogin.style.display = "none";
     liff
       .getProfile()
