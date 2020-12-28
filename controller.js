@@ -66,8 +66,10 @@ function load() {
   initLiff();
   if (cekLogin()) {
     btnLogin.style.display = "none";
-    namapengunjung.innerHTML = JSON.parse(liff.getProfile()).displayName;
-    photopengunjung.src = JSON.parse(liff.getProfile()).pictureUrl;
+    liff.getProfile().then((obj) => {
+      namapengunjung.innerHTML = JSON.parse(obj).displayName;
+      photopengunjung.src = JSON.parse(obj).pictureUrl;
+    });
   } else {
     salamPembuka.style.display = "none";
     btnLogout.style.display = "none";
