@@ -23,21 +23,26 @@ function order() {
   const minuman1 = (document.getElementById("minuman1").innerHTML = 0);
   const minuman2 = (document.getElementById("minuman2").innerHTML = 0);
   let pesanan = "";
-  pesanan += parseInt(makanan1.innerHTML)
-    ? makanan1.innerHTML + " Nasi Kuning\n"
-    : "";
-  pesanan += parseInt(makanan2.innerHTML)
-    ? makanan2.innerHTML + " Roti Bakar\n"
-    : "";
-  pesanan += parseInt(makanan3.innerHTML)
-    ? makanan3.innerHTML + " Nasi Padang\n"
-    : "";
-  pesanan += parseInt(minuman1.innerHTML)
-    ? minuman1.innerHTML + " Teh Tawar\n"
-    : "";
-  pesanan += parseInt(minuman2.innerHTML)
-    ? minuman2.innerHTML + " Jus Jeruk\n"
-    : "";
+  pesanan +=
+    parseInt(makanan1.innerHTML) !== 0
+      ? makanan1.innerHTML + " Nasi Kuning\n"
+      : "";
+  pesanan +=
+    parseInt(makanan2.innerHTML) !== 0
+      ? makanan2.innerHTML + " Roti Bakar\n"
+      : "";
+  pesanan +=
+    parseInt(makanan3.innerHTML) !== 0
+      ? makanan3.innerHTML + " Nasi Padang\n"
+      : "";
+  pesanan +=
+    parseInt(minuman1.innerHTML) !== 0
+      ? minuman1.innerHTML + " Teh Tawar\n"
+      : "";
+  pesanan +=
+    parseInt(minuman2.innerHTML) !== 0
+      ? minuman2.innerHTML + " Jus Jeruk\n"
+      : "";
   if (!pesanan) {
     alert("minimal pesan 1 ya");
   }
