@@ -12,11 +12,11 @@ function dec(x) {
 }
 
 function order() {
-  // if (!cekLogin()) return;
-  // if (!cekLine()) {
-  //   alert("Buka dari line ya");
-  //   return;
-  // }
+  if (!cekLogin()) return;
+  if (!cekLine()) {
+    alert("Buka dari line ya");
+    return;
+  }
   const makanan1 = document.getElementById("makanan1");
   const makanan2 = document.getElementById("makanan2");
   const makanan3 = document.getElementById("makanan3");
