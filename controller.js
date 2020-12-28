@@ -66,10 +66,15 @@ function load() {
   initLiff();
   if (cekLogin()) {
     btnLogin.style.display = "none";
-    liff.getProfile().then((obj) => {
-      namapengunjung.innerHTML = JSON.parse(obj).displayName;
-      photopengunjung.src = JSON.parse(obj).pictureUrl;
-    });
+    liff
+      .getProfile()
+      .then((obj) => {
+        namapengunjung.innerHTML = JSON.parse(obj).displayName;
+        photopengunjung.src = JSON.parse(obj).pictureUrl;
+      })
+      .catch((err) => {
+        console.log(err);
+      });
   } else {
     salamPembuka.style.display = "none";
     btnLogout.style.display = "none";
