@@ -12,16 +12,16 @@ function dec(x) {
 }
 
 function order() {
-  if (!cekLogin()) return;
-  if (!cekLine()) {
-    alert("Buka dari line ya");
-    return;
-  }
-  const makanan1 = document.getElementById("makanan1").innerHTML;
-  const makanan2 = document.getElementById("makanan2").innerHTML;
-  const makanan3 = document.getElementById("makanan3").innerHTML;
-  const minuman1 = document.getElementById("minuman1").innerHTML;
-  const minuman2 = document.getElementById("minuman2").innerHTML;
+  // if (!cekLogin()) return;
+  // if (!cekLine()) {
+  //   alert("Buka dari line ya");
+  //   return;
+  // }
+  const makanan1 = document.getElementById("makanan1");
+  const makanan2 = document.getElementById("makanan2");
+  const makanan3 = document.getElementById("makanan3");
+  const minuman1 = document.getElementById("minuman1");
+  const minuman2 = document.getElementById("minuman2");
   let pesanan = "";
   pesanan +=
     parseInt(makanan1.innerHTML) !== 0
