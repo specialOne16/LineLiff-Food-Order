@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-  <title>Bootstrap 4 Example</title>
+  <title>JUSEAT : Just sit and Eat</title>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
@@ -29,8 +29,8 @@
   <div class="container py-3">
     <h4 id="header">Halo <span class="font-weight-bold" id="namapengunjung">pengunjung</span>, yuk pesan dari JUSEAT!
     </h4>
-    <button id="logout" class="btn btn-danger float-right">Logout</button>
-    <h4 id="login">Hi! <button class="btn btn-primary">Login</button> dulu yuk</h4>
+    <button id="logout" class="btn btn-danger float-right" onclick="logout()">Logout</button>
+    <h4 id="login">Hi! <button class="btn btn-primary" onclick="login()">Login</button> dulu yuk</h4>
   </div>
 
   <div class="container py-3">
@@ -135,6 +135,7 @@
   </div>
   <script src="controller.js"></script>
 
+  <script src="https://static.line-scdn.net/liff/edge/2/sdk.js"></script>
 </body>
 
 </html>

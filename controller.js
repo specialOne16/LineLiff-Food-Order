@@ -1,12 +1,17 @@
+let bukaDariLine = false;
+let isLoggedIn = false;
+
 function inc(x) {
   if (!cekLogin()) return;
   x.innerHTML = parseInt(x.innerHTML) + 1;
 }
+
 function dec(x) {
   if (!cekLogin()) return;
   if (parseInt(x.innerHTML) <= 0) return;
   x.innerHTML = parseInt(x.innerHTML) - 1;
 }
+
 function order() {
   if (!cekLogin()) return;
   document.getElementById("makanan1").innerHTML = 0;
@@ -14,19 +19,40 @@ function order() {
   document.getElementById("makanan3").innerHTML = 0;
   document.getElementById("minuman1").innerHTML = 0;
   document.getElementById("minuman2").innerHTML = 0;
+  if (!cekLine()) {
+    alert("Buka dari line ya");
+  } else {
+    liff
+      .sendMessages([
+        {
+          type: "text",
+          text: "Anda telah menggunakan fitur Send Message!", // ganti sesuai konteks
+        },
+      ])
+      .then(function () {
+        window.alert("Pesanan terkirim");
+      })
+      .catch(function (error) {
+        window.alert("Pesanan gagal terkirim");
+      });
+  }
+}
+
+function openExternal() {
+  liff.openWindow({
+    url: "https://example.herokuapp.com/", // Isi dengan Endpoint URL aplikasi web Anda
+    external: true,
+  });
 }
 
 function cekLogin() {
-  const isLoggedIn = true;
   if (!isLoggedIn) {
-    alert("Login dulu yuk!");
     return false;
   }
   return true;
 }
 
 function cekLine() {
-  const bukaDariLine = false;
   if (bukaDariLine) {
     return true;
   }
@@ -40,7 +66,7 @@ function load() {
   const btnLogin = document.getElementById("login");
   const btnLogout = document.getElementById("logout");
   cekLine();
-  if (cekLogin) {
+  if (cekLogin()) {
     btnLogin.style.display = "none";
     namapengunjung.innerHTML = "Easta";
   } else {
@@ -49,4 +75,24 @@ function load() {
   }
 }
 
-function openExternal() {}
+function initLiff() {
+  const liffId = "";
+  liff
+    .init({
+      liffId: liffId,
+    })
+    .then(() => {
+      isLoggedIn = liff.isLoggedIn();
+      bukaDariLine = liff.isInClient();
+    })
+    .catch((err) => {});
+}
+
+function login() {
+  liff.login();
+}
+
+function logout() {
+  liff.logout();
+  window.location.reload();
+}
