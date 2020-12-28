@@ -83,6 +83,7 @@ function cekLine() {
     return true;
   }
   document.getElementById("external").style.display = "none";
+  document.getElementById("logout").style.display = "none";
   return false;
 }
 
