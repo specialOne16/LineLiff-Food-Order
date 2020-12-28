@@ -25,12 +25,21 @@ function cekLogin() {
   return true;
 }
 
+function cekLine() {
+  const bukaDariLine = false;
+  if (bukaDariLine) {
+    return true;
+  }
+  document.getElementById("external").style.display = "none";
+  return false;
+}
+
 function load() {
   const salamPembuka = document.getElementById("header");
   const namapengunjung = document.getElementById("namapengunjung");
   const btnLogin = document.getElementById("login");
   const btnLogout = document.getElementById("logout");
-
+  cekLine();
   if (cekLogin) {
     btnLogin.style.display = "none";
     namapengunjung.innerHTML = "Easta";
@@ -39,3 +48,5 @@ function load() {
     btnLogout.style.display = "none";
   }
 }
+
+function openExternal() {}
